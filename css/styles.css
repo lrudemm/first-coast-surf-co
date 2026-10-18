@@ -1,0 +1,29 @@
+/* 1. Design tokens: define once, reuse everywhere */
+:root {
+  --brand: hsl(200 85% 30%);
+  --ink: #0b2a4a;
+  --bg: #ffffff;
+  --muted: #5a6b7b;
+  --space: 1rem;
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* 2. Reset */
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.6; }
+
+/* 3. Mobile-first base: stacked nav, one-column content */
+header { padding: var(--space); }
+nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+nav a[aria-current="page"] { font-weight: bold; color: var(--brand); }
+main { padding: var(--space); }
+main > section + section { margin-top: 2rem; }
+.cards { display: grid; gap: var(--space); list-style: none; padding: 0; }
+.btn-primary { background: var(--brand); color: #fff; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; display: inline-block; }
+footer { padding: var(--space); color: var(--muted); }
+
+/* 4. One breakpoint: horizontal nav and a three-column card grid */
+@media (min-width: 40rem) {
+  nav ul { flex-direction: row; flex-wrap: wrap; }
+  .cards { grid-template-columns: repeat(3, 1fr); }
+}
