@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>First Coast Surf Co. – Contact</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/contact-counter.js" defer></script>
   </head>
 
   <body>
@@ -74,19 +75,18 @@
           </div>
 
           <div class="field">
-            <label for="phone">Phone (optional)</label>
-            <input
-              type="tel"
-              id="phone"
-              name="phone"
-              autocomplete="tel"
-              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-              title="Use the format 123-456-7890"
-              aria-describedby="phone-hint"
-            />
-            <span class="hint" id="phone-hint"
-              >Format: 123-456-7890. Used only for watch party reminders.</span
+            <label for="message">Message (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="500"
+              aria-describedby="message-hint message-count"
+            ></textarea>
+            <span class="hint" id="message-hint"
+              >Required only if you have a question.</span
             >
+            <span class="hint" id="message-count">Up to 500 characters.</span>
           </div>
 
           <div class="field">
