@@ -20,7 +20,11 @@
 }
 
 /* 2. Base */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -30,11 +34,29 @@ body {
   line-height: 1.6;
 }
 
-h1 { font-size: var(--text-2xl); line-height: 1.2; margin: 0 0 var(--s-2); }
-h2 { font-size: var(--text-xl); line-height: 1.3; margin: 0 0 var(--s-2); }
-h3 { font-size: var(--text-lg); line-height: 1.3; margin: 0 0 var(--s-1); }
+h1 {
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  margin: 0 0 var(--s-2);
+}
 
-img { display: block; max-width: 100%; height: auto; }
+h2 {
+  font-size: var(--text-xl);
+  line-height: 1.3;
+  margin: 0 0 var(--s-2);
+}
+
+h3 {
+  font-size: var(--text-lg);
+  line-height: 1.3;
+  margin: 0 0 var(--s-1);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 
 /* Focus style for keyboard users, site-wide */
 :focus-visible {
@@ -43,8 +65,40 @@ img { display: block; max-width: 100%; height: auto; }
 }
 
 /* 3. Mobile-first layout */
-header, main, footer { padding: var(--s-2); }
-footer { color: var(--muted); }
+header,
+main,
+footer {
+  padding: var(--s-2);
+  max-width: 60rem;
+  margin-inline: auto;
+}
+
+footer {
+  color: var(--muted);
+}
+
+/* Header: brand row on top, nav below */
+header {
+  display: grid;
+  gap: var(--s-2);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+}
+
+.brand h1 {
+  margin: 0;
+}
+
+.brand img {
+  display: block;
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+}
 
 /* Navigation: stacked on phones */
 nav ul {
@@ -87,9 +141,10 @@ main>section.hero {
   padding-top: var(--s-1);
 }
 
-
 /* Full-width hero: cancels main's padding */
-.hero { margin-inline: calc(var(--s-2) * -1); }
+.hero {
+  margin-inline: calc(var(--s-2) * -1);
+}
 
 /* Hero photo fills the full-width section */
 .hero img {
@@ -99,8 +154,8 @@ main>section.hero {
 }
 
 /* Keep hero text off the screen edge */
-.hero > h2,
-.hero > p {
+.hero>h2,
+.hero>p {
   padding-inline: var(--s-2);
 }
 
@@ -120,31 +175,16 @@ main>section.hero {
   text-decoration: none;
 }
 
-/* 4. One breakpoint: horizontal nav, three-column cards, more space */
-@media (min-width: 40rem) {
-
-  header, main, footer { padding: var(--s-3); }
-
-    main>section.hero {
-      padding-top: var(--s-2);
-    }
-
-  nav ul {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: var(--s-2);
-  }
-
-  main > section { padding-block: var(--s-4); }
-  .hero { margin-inline: calc(var(--s-3) * -1); }
-  .cards { grid-template-columns: repeat(3, 1fr); }
-}
-
 /* Contact form */
 .contact-form {
   display: grid;
   gap: var(--s-3);
   max-width: 36rem;
+  padding: var(--s-3);
+  border: 1px solid hsl(200 20% 75%);
+  border-radius: 8px;
+  background: hsl(200 20% 98%);
+  box-shadow: 0 1px 3px hsl(200 30% 20% / 0.12);
 }
 
 .field {
@@ -187,20 +227,37 @@ main>section.hero {
   gap: var(--s-1);
 }
 
-/* Contact form: a bordered "printed page" panel */
-.contact-form {
-  display: grid;
-  gap: var(--s-3);
-  max-width: 36rem;
-  padding: var(--s-3);
-  border: 1px solid hsl(200 20% 75%);
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 1px 3px hsl(200 30% 20% / 0.12);
-  background: hsl(200 20% 98%);
-}
-
+/* 4. One breakpoint: horizontal nav, three-column cards, more space */
 @media (min-width: 40rem) {
+
+  header,
+  main,
+  footer {
+    padding: var(--s-3);
+  }
+
+  main>section {
+    padding-block: var(--s-4);
+  }
+
+  main>section.hero {
+    padding-top: var(--s-2);
+  }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  .hero {
+    margin-inline: calc(var(--s-3) * -1);
+  }
+
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .contact-form {
     padding: var(--s-4);
   }
