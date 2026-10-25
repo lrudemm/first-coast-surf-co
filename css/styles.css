@@ -139,3 +139,69 @@ main>section.hero {
   .hero { margin-inline: calc(var(--s-3) * -1); }
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Contact form */
+.contact-form {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 36rem;
+}
+
+.field {
+  display: grid;
+  gap: var(--s-1);
+}
+
+.field label,
+.signups legend {
+  font-weight: 600;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: var(--s-1) var(--s-2);
+  font: inherit;
+  border: 1px solid hsl(200 20% 70%);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.hint {
+  font-size: .9em;
+  color: var(--muted);
+}
+
+.signups {
+  border: 0;
+  padding: 0;
+  display: grid;
+  gap: var(--s-1);
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: var(--s-1);
+}
+
+/* Contact form: a bordered "printed page" panel */
+.contact-form {
+  display: grid;
+  gap: var(--s-3);
+  max-width: 36rem;
+  padding: var(--s-3);
+  border: 1px solid hsl(200 20% 75%);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 3px hsl(200 30% 20% / 0.12);
+  background: hsl(200 20% 98%);
+}
+
+@media (min-width: 40rem) {
+  .contact-form {
+    padding: var(--s-4);
+  }
+}

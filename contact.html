@@ -30,7 +30,106 @@
         </ul>
       </nav>
     </header>
-    <h1>Contact First Coast Surf Co.</h1>
+
+    <!-- The form section of the page -->
+    <main>
+      <section class="contact" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">Contact First Coast Surf Co.</h2>
+        <p class="intro">
+          Ask a question, get WSL watch party notifications, or sign up for the
+          newsletter.
+        </p>
+
+        <form
+          class="contact-form"
+          method="post"
+          action="https://usebasin.com/f/09c373cd7008"
+        >
+          <div class="field">
+            <label for="full-name">Full name</label>
+            <input
+              type="text"
+              id="full-name"
+              name="name"
+              required
+              autocomplete="name"
+            />
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              autocomplete="email"
+              aria-describedby="email-hint"
+            />
+            <span class="hint" id="email-hint"
+              >We'll reply to this address.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="phone">Phone (optional)</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              autocomplete="tel"
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              title="Use the format 123-456-7890"
+              aria-describedby="phone-hint"
+            />
+            <span class="hint" id="phone-hint"
+              >Format: 123-456-7890. Used only for watch party reminders.</span
+            >
+          </div>
+
+          <div class="field">
+            <label for="inquiry">What is this about?</label>
+            <select id="inquiry" name="inquiry" required>
+              <option value="">Choose one</option>
+              <option value="question">A question</option>
+              <option value="watch-party">WSL watch party</option>
+              <option value="newsletter">Newsletter</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Message (optional)</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              aria-describedby="message-hint"
+            ></textarea>
+            <span class="hint" id="message-hint"
+              >Required only if you have a question.</span
+            >
+          </div>
+
+          <fieldset class="signups" aria-describedby="signup-hint">
+            <legend>Sign-ups (optional)</legend>
+            <p class="hint" id="signup-hint">
+              We'll only send surf news and events. You can unsubscribe at any
+              time.
+            </p>
+            <label class="checkbox"
+              ><input type="checkbox" name="signup" value="watch-party" /> Email
+              me WSL watch party times</label
+            >
+            <label class="checkbox"
+              ><input type="checkbox" name="signup" value="newsletter" /> Send
+              me the newsletter</label
+            >
+          </fieldset>
+
+          <button class="btn-primary" type="submit">Send</button>
+        </form>
+      </section>
+    </main>
 
     <!-- Footer: contact, hours, copyright -->
     <footer>
