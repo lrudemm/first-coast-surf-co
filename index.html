@@ -1,65 +1,92 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>First Coast Surf Co. – Home</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <!-- Site header: logo/brand + primary navigation -->
-  <header>
-    <h1>First Coast Surf Co.</h1>
-    <img src="images/k59_61_Overview.jpg" alt="scenic overview of the surfposts K59 and K61 in El Slvador" alt="First Coast Surf Co. logo" width="100%" height="auto">
-    <nav aria-label="Primary">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Lessons &amp; Services</a></li>
-        <li><a href="gear.html">Gear &amp; Rentals</a></li>
-        <li><a href="report.html">Surf Report</a></li>
-        <li><a href="events.html">Events &amp; Watch Parties</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>First Coast Surf Co. – Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Site header: logo/brand + primary navigation -->
+    <header>
+      <h1>First Coast Surf Co.</h1>
+      <img
+        src="images/logo-placeholder.png"
+        alt="First Coast Surf Co. logo"
+        width="100"
+        height="100"
+      />
+      <!-- Nav component -->
+      <nav aria-label="Primary">
+        <ul>
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="gear.html">Gear</a></li>
+          <li><a href="report.html">Surf Report</a></li>
+          <li><a href="events.html">Events</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <!-- Main content -->
-  <main>
-    <section aria-labelledby="hero">
-      <h2 id="hero">Learn to Surf the First Coast</h2>
-      <img src="#" alt="Image to be added, placeholder for now">
-      <p><a href="lessons.html">Book a Lesson</a></p>
-    </section>
+    <!-- Main content -->
+    <main>
+      <section class="hero" aria-labelledby="hero">
+        <h2 id="hero">Learn to Surf the First Coast</h2>
+        <img
+          src="images/k59_61_Overview.jpg"
+          alt="Scenic view of surf breaks K59 and K61 in El Salvador"
+        />
+        <p><a class="btn-primary" href="services.html">Book a Lesson</a></p>
+      </section>
 
-    <section aria-labelledby="intro">
-      <h2 id="intro">Placeholder Intro Blurb</h2>
-      <p>Placeholder paragraph introducing First Coast Surf Co. — who we are, what we offer, and why visitors should stop in.</p>
-    </section>
+      <section aria-labelledby="intro">
+        <h2 id="intro">Surf Lessons and Gear on the First Coast</h2>
+        <p>
+          First Coast Surf Co. helps beginners and experienced surfers enjoy
+          Jacksonville's beaches. Book a lesson, rent a board or wetsuit, or
+          check today's surf conditions before you paddle out.
+        </p>
+      </section>
+      <section aria-labelledby="cards">
+        <h2 id="cards">What We Offer</h2>
+        <ul class="cards">
+          <li>
+            <h3>Lessons</h3>
+            <p>
+              Private and group lessons for every skill level, from first
+              stand-up to your first green-wave ride.
+            </p>
+          </li>
+          <li>
+            <h3>Rentals</h3>
+            <p>
+              Surfboards and wetsuits rented by the day or week, with sizes for
+              kids and adults.
+            </p>
+          </li>
+          <li>
+            <h3>Surf Report</h3>
+            <p>
+              Current conditions for six local breaks, from Ponte Vedra to Big
+              Talbot Island.
+            </p>
+          </li>
+        </ul>
+      </section>
+    </main>
 
-    <section aria-labelledby="cards">
-      <h2 id="cards">What We Offer</h2>
-      <ul>
-        <li>
-          <h3>Lessons</h3>
-          <p>Placeholder: private and group lessons for all skill levels.</p>
-        </li>
-        <li>
-          <h3>Rentals</h3>
-          <p>Placeholder: board and wetsuit rentals by the day or week.</p>
-        </li>
-        <li>
-          <h3>Surf Report</h3>
-          <p>Placeholder: current conditions for six local breaks, Ponte Vedra to Big Talbot Island.</p>
-        </li>
-      </ul>
-    </section>
-  </main>
-
-  <!-- Footer: contact, hours, copyright -->
-  <footer>
-    <p>Placeholder: address and hours.</p>
-    <p>&copy; 2026 First Coast Surf Co.</p>
-  </footer>
-</body>
+    <!-- Footer: contact, hours, copyright -->
+    <footer>
+      <p>
+        Jacksonville, FL |
+        <a href="mailto:PrettyLittleWave@gmail.com"
+          >PrettyLittleWave@gmail.com</a
+        >
+      </p>
+      <p>Hours: Daily, 8 a.m. to 6 p.m.</p>
+      <p>&copy; 2026 First Coast Surf Co.</p>
+    </footer>
+  </body>
 </html>

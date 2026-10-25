@@ -1,29 +1,116 @@
-/* 1. Design tokens: define once, reuse everywhere */
+/* 1. Design tokens */
 :root {
+  /* Spacing scale */
+  --s-1: .5rem;
+  --s-2: 1rem;
+  --s-3: 1.5rem;
+  --s-4: 3rem;
+
+  /* Palette */
   --brand: hsl(200 85% 30%);
   --ink: #0b2a4a;
   --bg: #ffffff;
   --muted: #5a6b7b;
-  --space: 1rem;
+
+  /* Type scale */
   --font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --text-lg: 1.25rem;
+  --text-xl: 1.6rem;
+  --text-2xl: 2.2rem;
 }
 
-/* 2. Reset */
+/* 2. Base */
 *, *::before, *::after { box-sizing: border-box; }
-body { margin: 0; font-family: var(--font); color: var(--ink); background: var(--bg); line-height: 1.6; }
 
-/* 3. Mobile-first base: stacked nav, one-column content */
-header { padding: var(--space); }
-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
-nav a[aria-current="page"] { font-weight: bold; color: var(--brand); }
-main { padding: var(--space); }
-main > section + section { margin-top: 2rem; }
-.cards { display: grid; gap: var(--space); list-style: none; padding: 0; }
-.btn-primary { background: var(--brand); color: #fff; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; display: inline-block; }
-footer { padding: var(--space); color: var(--muted); }
+body {
+  margin: 0;
+  font-family: var(--font);
+  color: var(--ink);
+  background: var(--bg);
+  line-height: 1.6;
+}
 
-/* 4. One breakpoint: horizontal nav and a three-column card grid */
+h1 { font-size: var(--text-2xl); line-height: 1.2; margin: 0 0 var(--s-2); }
+h2 { font-size: var(--text-xl); line-height: 1.3; margin: 0 0 var(--s-2); }
+h3 { font-size: var(--text-lg); line-height: 1.3; margin: 0 0 var(--s-1); }
+
+img { display: block; max-width: 100%; height: auto; }
+
+/* Focus style for keyboard users, site-wide */
+:focus-visible {
+  outline: 3px solid var(--brand);
+  outline-offset: 2px;
+}
+
+/* 3. Mobile-first layout */
+header, main, footer { padding: var(--s-2); }
+footer { color: var(--muted); }
+
+/* Navigation: stacked on phones */
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-1);
+}
+nav a { color: var(--ink); }
+nav a[aria-current="page"] {
+  font-weight: bold;
+  color: var(--brand);
+  border-bottom: 3px solid var(--brand);
+}
+
+main > section {
+  padding-block: var(--s-3);
+  border-top: 1px solid hsl(200 20% 85%);
+}
+main > section:first-child { border-top: 0; }
+
+/* Full-width hero: cancels main's padding */
+.hero { margin-inline: calc(var(--s-2) * -1); }
+
+/* Hero photo fills the full-width section */
+.hero img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Keep hero text off the screen edge */
+.hero > h2,
+.hero > p {
+  padding-inline: var(--s-2);
+}
+
+.cards {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  gap: var(--s-2);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  padding: var(--s-1) var(--s-3);
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* 4. One breakpoint: horizontal nav, three-column cards, more space */
 @media (min-width: 40rem) {
-  nav ul { flex-direction: row; flex-wrap: wrap; }
+  header, main, footer { padding: var(--s-3); }
+
+  nav ul {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: var(--s-2);
+  }
+
+  main > section { padding-block: var(--s-4); }
+  .hero { margin-inline: calc(var(--s-3) * -1); }
   .cards { grid-template-columns: repeat(3, 1fr); }
 }
