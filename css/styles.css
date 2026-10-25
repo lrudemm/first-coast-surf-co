@@ -55,18 +55,38 @@ nav ul {
   flex-direction: column;
   gap: var(--s-1);
 }
-nav a { color: var(--ink); }
+
+nav a {
+  display: inline-block;
+  padding: var(--s-1) 0;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
 nav a[aria-current="page"] {
   font-weight: bold;
   color: var(--brand);
   border-bottom: 3px solid var(--brand);
 }
 
-main > section {
+main>section {
   padding-block: var(--s-3);
   border-top: 1px solid hsl(200 20% 85%);
 }
-main > section:first-child { border-top: 0; }
+
+main>section:first-child {
+  border-top: 0;
+}
+
+main>section.hero {
+  padding-top: var(--s-1);
+}
+
 
 /* Full-width hero: cancels main's padding */
 .hero { margin-inline: calc(var(--s-2) * -1); }
@@ -102,7 +122,12 @@ main > section:first-child { border-top: 0; }
 
 /* 4. One breakpoint: horizontal nav, three-column cards, more space */
 @media (min-width: 40rem) {
+
   header, main, footer { padding: var(--s-3); }
+
+    main>section.hero {
+      padding-top: var(--s-2);
+    }
 
   nav ul {
     flex-direction: row;
