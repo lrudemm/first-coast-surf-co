@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lrudemm.github.io/first-coast-surf-co/sitemap.xml
