@@ -5,6 +5,8 @@ Live site: https://lrudemm.github.io/first-coast-surf-co/
 ## Site-wide
 
 - **Header brand:** The site name in the header was an `<h1>` on every page. It is now a styled `<p class="site-name">` so each page has one page-topic `<h1>`. The CSS selector changed from `.brand h1` to `.brand .site-name` to keep the same look.
+- **Page layout:** The content of about, services, gear, report, and events is now wrapped in `<main>`, matching the home and contact pages, so it gets the same side margins.
+- **Headings:** All `<h1>` headings are center-aligned (`text-align: center` on the `h1` rule in `css/styles.css`).
 - **Logo alt text:** Unchanged. "First Coast Surf Co. logo" describes the logo.
 - **Added `robots.txt`:** Allows all crawlers and points to the sitemap.
 - **Added `sitemap.xml`:** Lists all 7 pages with absolute URLs.
