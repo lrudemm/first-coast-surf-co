@@ -95,9 +95,12 @@ header {
   gap: var(--s-2);
 }
 
-.brand h1 {
+.brand .site-name {
   margin: 0;
   text-align: left;
+  font-size: var(--text-2xl);
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 .brand img {
